@@ -10,5 +10,5 @@ jobs:
     - run: echo hello > path/to/artifact/world.txt
     - uses: actions/upload-artifact@v2
       with:
-          name: my-artifact
+          name: "&quot;&gt;&lt;my-artifact"
           path: path/to/artifact/world.txt
