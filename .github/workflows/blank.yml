@@ -1,4 +1,4 @@
-name: Caching
+name: Testing
 
 on: push
 
@@ -6,9 +6,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: Cache project
-      uses: actions/cache@v2
+    - run: mkdir -p path/to/artifact
+    - run: echo hello > path/to/artifact/world.txt
+    - uses: actions/upload-artifact@v2
       with:
-        path:  ~/.npm
-        key: Linux-node-20392547f5cec4079f98ba9598bdcb921b7cc3f7cf77718f50b7c78ec0844fb5
-  
+          name: my-artifact
+          path: path/to/artifact/world.txt
